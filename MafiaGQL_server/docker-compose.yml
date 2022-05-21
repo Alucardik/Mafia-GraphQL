@@ -1,0 +1,24 @@
+version: "3.1"
+
+services:
+  mongo:
+    image: mongo
+    hostname: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+
+  server:
+    build:
+      context: .
+    hostname: graphQL_server
+    depends_on:
+      - mongo
+    environment:
+      DB_HOST: mongodb
+      PORT: 8080
+    ports:
+      - "8080:8080"

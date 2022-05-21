@@ -1,0 +1,40 @@
+type GameSession {
+  _id: ID!
+  name: String!
+  ongoing: Boolean!
+  participants: [String!]!
+  comments: [Comment!]
+}
+
+type Comment {
+  sessionId: String!
+  author: String!
+  contents: String!
+}
+
+type Query {
+  sessions(ongoing: Boolean = true, sessionId: ID): [GameSession!]
+}
+
+input NewGameSession {
+  name: String!
+  initiator: String!
+}
+
+input NewParticipant {
+  sessionId: String!
+  userId: String!
+}
+
+input NewComment {
+  sessionId: String!
+  author: String!
+  contents: String!
+}
+
+type Mutation {
+  startSession(input: NewGameSession!): GameSession!
+  addParticipant(input: NewParticipant!): GameSession
+  addComment(input: NewComment!): String!
+  endSession(sessionId: String!): String!
+}
