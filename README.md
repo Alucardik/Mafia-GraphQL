@@ -12,7 +12,8 @@
 В качестве базы данных используется NoSQL-решение `MongoDB`, в связи с простотой интерфейса и нативностью сериализации данных из `json` в Mongo и обратно.
 
 Для локального запуска сервера необходимо наличие `go` версии `1.17 - 1.18`. Требуется перейти в папку `MafiaGQL_server` и ввести команду `go run .`
-[Ссылка на докер-образ](https://hub.docker.com/layers/soa-images/alucardik/soa-images/MafiaREST/images/sha256-3eedf991a93496601bce41eb5d14c83a9c94ee3b3609ab027532f9c2e2ab9b4a?context=explore) (`alucardik/soa-images:MafiaGQL-server`)
+[Ссылка на докер-образ](https://hub.docker.com/layers/soa-images/alucardik/soa-images/MafiaGQL-server/images/sha256-183fb91dfdc680dab748124ed0c703645f23555f335d6f3493b2078f61d7ef04?context=explore) (`alucardik/soa-images:MafiaGQL-server`)
+
 
 > ВНИМАНИЕ: для работы сервера нужна поднятая база данных, это может усложнять локальный запуск
 
